@@ -1,0 +1,16 @@
+{
+  "name": "billboard",
+  "version": "1.0.0",
+  "description": "Display for HackDavis billboard",
+  "repository": "https://github.com/HackDavis/billboard.git",
+  "author": "Thomas Munduchira <thomas@thomasmunduchira.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "http-server"
+  },
+  "dependencies": {},
+  "devDepencies": {
+    "http-server": "^0.11.1"
+  }
+}
