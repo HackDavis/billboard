@@ -4,14 +4,45 @@ const padDigit = digit => {
 
 const setTime = () => {
   const timeRemaining = moment('2018-01-21T12:00:00-07:00').countdown();
-  console.log(timeRemaining);
   const hours = timeRemaining.days * 24 + timeRemaining.hours;
   const minutes = timeRemaining.minutes;
 
-  document.getElementById('hours').innerHTML = padDigit(hours);
-  document.getElementById('minutes').innerHTML = padDigit(minutes);
+  $('#hours').html(padDigit(hours));
+  $('#minutes').html(padDigit(minutes));
 };
 
 setTime();
 const interval = setInterval(setTime, 45000);
 
+$.fn.extend({
+  animateCss: function (animationName, callback) {
+    const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    this.addClass('animated ' + animationName).one(animationEnd, () => {
+      $(this).removeClass('animated ' + animationName);
+      if (callback) {
+        callback();
+      }
+    });
+    return this;
+  }
+});
+
+const countdownElement = $('.countdown');
+const logoElement = $('.logo');
+const eventElement = $('.event');
+
+const animateLogo = () => {
+  countdownElement.hide();
+  logoElement.show();
+  logoElement.animateCss('flipInX', () => {
+    setTimeout(() => {
+      logoElement.animateCss('flipOutX', () => {
+        logoElement.hide();
+        countdownElement.show();
+      });
+    }, 2500);
+  });
+};
+
+logoElement.hide();
+const logoAnimationInterval = setInterval(animateLogo, 15000);
