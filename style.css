@@ -2,6 +2,7 @@ body {
   background: #212121;
   color: white;
   font-family: 'Arimo', sans-serif;
+  overflow: hidden;
 }
 
 .countdown {
