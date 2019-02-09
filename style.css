@@ -7,6 +7,7 @@ body {
 .countdown {
   display: flex;
   justify-content: center;
+  margin-top: 110px;
 }
 
 .logo {
@@ -19,7 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: 0px 50px;
+  padding: 0px 40px;
 }
 
 .logo-img {
@@ -29,16 +30,16 @@ body {
 .digit-number,
 .digit-text {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   text-align: center;
 }
 
 .digit-number {
-  font-size: 430px;
+  font-size: 350px;
 }
 
 .digit-text {
-  font-size: 140px;
+  font-size: 105px;
 }
 
 .logo-img {
