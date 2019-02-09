@@ -2,17 +2,43 @@ const padDigit = digit => {
   return digit < 10 ? '0' + digit : digit;
 };
 
-const setTime = () => {
-  const timeRemaining = moment('2018-01-21T12:00:00-07:00').countdown();
+const deadline = moment('2019-02-10T12:00:00-08:00')
+
+var interval = null;
+
+const calculateTime = () => {
+  const now = moment.now();
+  const timeDiff = deadline.diff(now);
+  if (timeDiff < 0) {
+    return {
+      hours: 0,
+      minutes: 0,
+      deadlinePassed: true
+    }
+  }
+
+  const timeRemaining = deadline.countdown();
   const hours = timeRemaining.days * 24 + timeRemaining.hours;
   const minutes = timeRemaining.minutes;
+  return {
+    hours,
+    minutes,
+    deadlinePassed: false
+  }
+}
 
-  $('#hours').html(padDigit(hours));
-  $('#minutes').html(padDigit(minutes));
+const setTime = () => {
+  time = calculateTime();
+  $('#hours').html(padDigit(time.hours));
+  $('#minutes').html(padDigit(time.minutes));
+
+  if (time.deadlinePassed) {
+    clearInterval(interval);
+  }
 };
 
 setTime();
-const interval = setInterval(setTime, 45000);
+interval = setInterval(setTime, 5000);
 
 $.fn.extend({
   animateCss: function (animationName, callback) {
@@ -34,9 +60,9 @@ const eventElement = $('.event');
 const animateLogo = () => {
   countdownElement.hide();
   logoElement.show();
-  logoElement.animateCss('flipInX', () => {
+  logoElement.animateCss('flip', () => {
     setTimeout(() => {
-      logoElement.animateCss('flipOutX', () => {
+      logoElement.animateCss('flipOutY', () => {
         logoElement.hide();
         countdownElement.show();
       });
@@ -46,3 +72,4 @@ const animateLogo = () => {
 
 logoElement.hide();
 const logoAnimationInterval = setInterval(animateLogo, 15000);
+
