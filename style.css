@@ -61,3 +61,29 @@ div.circle
     border-radius: 1000px;
     transition: 0.75s ease-in-out all;
 }
+
+.svg
+{
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%,-50%) scale(1);
+    animation: grow-shrink 5s ease-in-out infinite;
+}
+
+.svg path
+{
+    stroke: red;
+    stroke-dasharray: 100vh; /* --- 2 * pi * r --- */
+    stroke-dashoffset: -100vh;
+    transition: stroke-dashoffset 10s linear;
+}
+
+@keyframes grow-shrink
+{
+    0% {transform: translate(-50%,-50%) scale(1);}
+    50% {transform: translate(-50%,-50%) scale(1.1);}
+    100% {transform: translate(-50%,-50%) scale(1);}
+}

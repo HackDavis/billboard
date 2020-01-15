@@ -58,6 +58,7 @@ const logoElement = $('.logo');
 const eventElement = $('.event');
 
 const animateLogo = () => {
+        $('.svg path').css('stroke-dashoffset', '0vh')
   countdownElement.hide();
   logoElement.show();
   logoElement.animateCss('flip', () => {
@@ -81,5 +82,5 @@ const animateLogo = () => {
 };
 
 logoElement.hide();
-const logoAnimationInterval = setInterval(animateLogo, 15000);
+const logoAnimationInterval = setInterval(animateLogo, 5000);
 
