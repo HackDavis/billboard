@@ -81,5 +81,5 @@ const animateLogo = () => {
 };
 
 logoElement.hide();
-const logoAnimationInterval = setInterval(animateLogo, 5000);
+const logoAnimationInterval = setInterval(animateLogo, 15000);
 
