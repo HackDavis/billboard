@@ -98,7 +98,7 @@ $(document).ready(function()
                     animateLogo();
                 }, logo_interval);
             }, 4000);
-        }, 5000);
+        }, 3000);
 
     }
 
