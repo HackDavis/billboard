@@ -62,6 +62,16 @@ const animateLogo = () => {
   logoElement.show();
   logoElement.animateCss('flip', () => {
     setTimeout(() => {
+        $('div.circle').show()
+      $('div.circle').css('transform', 'translate(-50%, -50%) scale(8)');
+      setTimeout(() => {
+        $('div.circle').css('opacity', '0')
+      }, 400);
+      setTimeout(() => {
+        $('div.circle').hide();
+        $('div.circle').css('transform', 'translate(-50%, -50%) scale(0)');
+        $('div.circle').css('opacity', '1');
+      }, 2000);
       logoElement.animateCss('flipOutY', () => {
         logoElement.hide();
         countdownElement.show();
@@ -71,5 +81,5 @@ const animateLogo = () => {
 };
 
 logoElement.hide();
-const logoAnimationInterval = setInterval(animateLogo, 15000);
+const logoAnimationInterval = setInterval(animateLogo, 5000);
 

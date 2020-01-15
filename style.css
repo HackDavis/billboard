@@ -48,3 +48,16 @@ body {
   height: 600px;
 }
 
+div.circle
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 50vh;
+    height: 50vh;
+    opacity: 1;
+    background-color: white;
+    border-radius: 1000px;
+    transition: 0.75s ease-in-out all;
+}
