@@ -56,33 +56,55 @@ $(document).ready(function()
     });
 
     const countdownElement = $('.countdown');
-    const logoElement = $('.logo');
-    const eventElement = $('.event');
+    const logoElement = $('.svg');
 
-    const animateLogo = () => {
-            $('.svg path').css('stroke-dashoffset', '0vh')
-    countdownElement.hide();
-    logoElement.show();
-    logoElement.animateCss('flip', () => {
-        setTimeout(() => {
-            $('div.circle').show()
+    const animateLogo = () => 
+    {
+        $('.svg').show()
+        $('div.circle').show()
         $('div.circle').css('transform', 'translate(-50%, -50%) scale(8)');
         setTimeout(() => {
+            countdownElement.hide();
             $('div.circle').css('opacity', '0')
         }, 400);
         setTimeout(() => {
             $('div.circle').hide();
             $('div.circle').css('transform', 'translate(-50%, -50%) scale(0)');
             $('div.circle').css('opacity', '1');
-        }, 2000);
-        logoElement.animateCss('flipOutY', () => {
-            logoElement.hide();
-            countdownElement.show();
-        });
-        }, 2500);
-    });
-    };
+        }, 1000);
+        $('.svg path').css('stroke-dashoffset', '0vh')
 
-    logoElement.hide();
-    const logoAnimationInterval = setInterval(animateLogo, 5000);
+        setTimeout(() => {// Wait for logo to draw
+
+            $('.svg').css('animation', 'grow-shrink 0.3s ease-in-out')
+            
+            setTimeout(() => { // Wait a bit before doing anything
+                $('div.circle').show()
+                $('div.circle').css('transform', 'translate(-50%, -50%) scale(8)');
+                setTimeout(() => {
+                    countdownElement.show();
+                    $('.svg').hide()
+                    $('.svg path').css('stroke-dashoffset', '-75vh')
+                    $('.svg').css('animation', 'none')
+                    $('div.circle').css('opacity', '0')
+                }, 400);
+                setTimeout(() => {
+                    $('div.circle').hide();
+                    $('div.circle').css('transform', 'translate(-50%, -50%) scale(0)');
+                    $('div.circle').css('opacity', '1');
+                }, 1000);
+
+                setTimeout(() => {
+                    animateLogo();
+                }, logo_interval);
+            }, 4000);
+        }, 5000);
+
+    }
+
+    const logo_interval = 15000
+
+    setTimeout(() => {
+        animateLogo();
+    }, logo_interval);
 })

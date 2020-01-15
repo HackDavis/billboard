@@ -70,20 +70,31 @@ div.circle
     width: 60%;
     height: 60%;
     transform: translate(-50%,-50%) scale(1);
-    animation: grow-shrink 5s ease-in-out infinite;
 }
 
 .svg path
 {
     stroke: red;
     stroke-dasharray: 100vh; /* --- 2 * pi * r --- */
-    stroke-dashoffset: -100vh;
-    transition: stroke-dashoffset 10s linear;
+    stroke-dashoffset: -75vh;
+    transition: stroke-dashoffset 5s linear;
+    animation: 5s linear rainbow infinite;
 }
 
 @keyframes grow-shrink
 {
     0% {transform: translate(-50%,-50%) scale(1);}
-    50% {transform: translate(-50%,-50%) scale(1.1);}
+    50% {transform: translate(-50%,-50%) scale(1.2);}
     100% {transform: translate(-50%,-50%) scale(1);}
+}
+
+@keyframes rainbow
+{
+    14% {stroke: rgb(255, 0, 0);}
+    28% {stroke: rgb(255, 255, 0);}
+    42% {stroke: rgb(0, 255, 0);}
+    56% {stroke: rgb(0, 255, 255);}
+    70% {stroke: rgb(0, 0, 255);}
+    84% {stroke: rgb(255, 0, 255);}
+    100% {stroke: rgb(255, 0, 0);}
 }
