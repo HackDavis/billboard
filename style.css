@@ -1,7 +1,14 @@
+
+  @font-face {
+    font-family: "Avenir Next";
+    font-weight: normal;
+    src: url("lib/AvenirNextLTPro-Regular.otf");
+}
+
 body {
   background: #212121;
   color: white;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Avenir Next';
   overflow: hidden;
 }
 
