@@ -4,7 +4,7 @@ $(document).ready(function()
     return digit < 10 ? '0' + digit : digit;
     };
 
-    const deadline = moment('2019-02-10T12:00:00-08:00')
+    const deadline = moment('2020-01-19T13:00:00')
 
     var interval = null;
 
