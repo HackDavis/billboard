@@ -84,7 +84,7 @@ div.circle
     stroke: red;
     stroke-dasharray: 100vh; /* --- 2 * pi * r --- */
     stroke-dashoffset: -75vh;
-    transition: stroke-dashoffset 3s cubic-bezier(.69,0,.25,1);
+    transition: stroke-dashoffset 3s linear;
     animation: 5s linear rainbow infinite;
 }
 
