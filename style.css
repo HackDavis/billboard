@@ -81,11 +81,10 @@ div.circle
 
 .svg path
 {
-    stroke: red;
+    stroke: white;
     stroke-dasharray: 100vh; /* --- 2 * pi * r --- */
     stroke-dashoffset: -75vh;
     transition: stroke-dashoffset 3s linear;
-    animation: 5s linear rainbow infinite;
 }
 
 @keyframes grow-shrink
@@ -103,5 +102,5 @@ div.circle
     56% {stroke: rgb(0, 255, 255);}
     70% {stroke: rgb(0, 0, 255);}
     84% {stroke: rgb(255, 0, 255);}
-    100% {stroke: rgb(255, 0, 0);}
+    100% {stroke: white;}
 }

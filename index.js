@@ -61,6 +61,7 @@ $(document).ready(function()
     const animateLogo = () => 
     {
         $('.svg').show()
+        $('.svg path').css('animation', '5s linear rainbow')
         $('div.circle').show()
         $('div.circle').css('transform', 'translate(-50%, -50%) scale(8)');
         setTimeout(() => {
@@ -87,6 +88,7 @@ $(document).ready(function()
                     $('.svg path').css('stroke-dashoffset', '-75vh')
                     $('.svg').css('animation', 'none')
                     $('div.circle').css('opacity', '0')
+                    $('.svg path').css('animation', 'none')
                 }, 400);
                 setTimeout(() => {
                     $('div.circle').hide();
