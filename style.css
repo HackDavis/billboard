@@ -100,7 +100,7 @@ div.circle
     28% {stroke: rgb(255, 255, 0);}
     42% {stroke: rgb(0, 255, 0);}
     56% {stroke: rgb(0, 255, 255);}
-    70% {stroke: rgb(0, 0, 255);}
+    70% {stroke: rgb(0, 100, 255);}
     84% {stroke: rgb(255, 0, 255);}
     100% {stroke: white;}
 }

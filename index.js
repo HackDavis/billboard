@@ -104,7 +104,7 @@ $(document).ready(function()
 
     }
 
-    const logo_interval = 15000
+    const logo_interval = 30000
 
     setTimeout(() => {
         animateLogo();
