@@ -84,7 +84,7 @@ div.circle
     stroke: white;
     stroke-dasharray: 100vh; /* --- 2 * pi * r --- */
     stroke-dashoffset: -75vh;
-    transition: stroke-dashoffset 3s cubic-bezier(.27,1.12,.59,.91);
+    transition: stroke-dashoffset 3s cubic-bezier(.63,.04,.42,.94);
 }
 
 @keyframes grow-shrink
